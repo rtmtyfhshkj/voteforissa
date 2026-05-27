@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -80,7 +77,6 @@
     100% { opacity: 1; transform: translateY(0) scale(1); }
   }
 
-  /* ===== HERO ===== */
   .hero {
     text-align: center;
     padding: 56px 24px 40px;
@@ -118,7 +114,6 @@
     animation: fadeSlideIn 0.7s ease 0.35s forwards;
   }
 
-  /* ===== QUIZ ===== */
   .quiz-section {
     max-width: 520px;
     margin: 0 auto 28px;
@@ -149,9 +144,7 @@
     margin-bottom: 12px;
   }
 
-  .q-card.hidden {
-    display: none;
-  }
+  .q-card.hidden { display: none; }
 
   .q-card.appearing {
     animation: popIn 0.35s ease forwards;
@@ -174,7 +167,6 @@
     margin-bottom: 16px;
   }
 
-  /* Yes/No ボタン — 常に押しなおし可能 */
   .yn-buttons {
     display: flex;
     gap: 10px;
@@ -193,7 +185,6 @@
     transition: all 0.2s ease;
   }
 
-  /* 未選択状態：両方白 */
   .yn-btn.yes,
   .yn-btn.no {
     background: rgba(255,255,255,0.9);
@@ -201,7 +192,6 @@
     border-color: rgba(126,206,244,0.45);
   }
 
-  /* 選択中：濃い青 */
   .yn-btn.selected {
     background: linear-gradient(135deg, var(--sky-deep), var(--sky-deeper));
     color: white;
@@ -209,11 +199,8 @@
     box-shadow: 0 4px 14px rgba(58,173,224,0.4);
   }
 
-  .yn-btn:hover {
-    transform: translateY(-2px);
-  }
+  .yn-btn:hover { transform: translateY(-2px); }
 
-  /* ===== STEPS ===== */
   .steps-wrapper {
     max-width: 520px;
     margin: 0 auto;
@@ -381,16 +368,13 @@
     line-height: 1.75;
   }
 
-  /* ===== 未選択時のプレビュー ===== */
   .default-preview {
     display: flex;
     flex-direction: column;
     gap: 22px;
   }
 
-  .default-preview.hidden {
-    display: none;
-  }
+  .default-preview.hidden { display: none; }
 
   .preview-card {
     background: var(--card-bg);
@@ -407,15 +391,6 @@
     color: var(--text-soft);
   }
 
-  .preview-hint {
-    text-align: center;
-    font-size: 13px;
-    color: var(--text-soft);
-    margin-bottom: 16px;
-    letter-spacing: 0.04em;
-  }
-
-  /* ===== THANK YOU ===== */
   .thankyou {
     text-align: center;
     padding: 40px 24px 48px;
@@ -455,21 +430,29 @@
   }
 </script>
 
-<!-- Hero -->
 <header class="hero">
   <p class="hero-sub">Produce 101 Japan 新世界</p>
   <h1 class="hero-title">柳谷伊冴くんへの投票方法</h1>
   <div class="hero-divider"></div>
 </header>
 
-<!-- Quiz -->
+<div style="max-width:520px; margin:0 auto 24px; padding:0 20px;">
+  <div style="background:linear-gradient(135deg,rgba(58,173,224,0.15),rgba(126,206,244,0.08)); border:2px solid rgba(58,173,224,0.35); border-radius:20px; padding:20px 24px; text-align:center;">
+    <p style="font-size:13px; font-weight:700; color:var(--sky-deeper); letter-spacing:0.08em; margin-bottom:10px;">🗳️ 投票期間</p>
+    <p style="font-size:16px; font-weight:700; color:var(--text); margin-bottom:6px;">5/28(木)〜6/6(土)</p>
+    <p style="font-size:14px; color:var(--text-soft); margin-bottom:10px;">1日2票、毎日投票可能です</p>
+    <div style="background:rgba(255,200,0,0.15); border:1.5px solid rgba(255,180,0,0.4); border-radius:12px; padding:10px 14px;">
+      <p style="font-size:13px; font-weight:700; color:#b8860b; line-height:1.7;">⭐ 6/6(土) 13:30〜生放送中は票が<span style="font-size:16px;">2倍</span>になります！(予定)</p>
+    </div>
+  </div>
+</div>
+
 <section class="quiz-section">
   <div class="quiz-intro">
     <p>現在の状況により必要な手順が変わります</p>
     <p>Yes/Noでお答えください（最大2問）</p>
   </div>
 
-  <!-- Q1 -->
   <div class="q-card" id="q1">
     <div class="q-label">Q1</div>
     <div class="q-text">dアカウントを持っていますか？</div>
@@ -479,7 +462,6 @@
     </div>
   </div>
 
-  <!-- Q2（Q1でYesの場合に表示） -->
   <div class="q-card hidden" id="q2">
     <div class="q-label">Q2</div>
     <div class="q-text">Leminoアプリをダウンロードしていますか？</div>
@@ -490,10 +472,8 @@
   </div>
 </section>
 
-<!-- Steps -->
 <div class="steps-wrapper">
 
-  <!-- 未選択時プレビュー -->
   <div class="default-preview" id="default-preview">
     <div class="preview-card">
       <div class="step-header">
@@ -517,7 +497,6 @@
 
   <!-- Flow A: dアカウントなし -->
   <div id="flow-A" class="flow-section">
-
     <div class="step-card">
       <div class="step-header">
         <div class="step-num">①</div>
@@ -579,30 +558,28 @@
           <img src="IMG_5147.jpeg" style="width:100%; border-radius:8px; margin:8px 0 12px; display:block;" alt="Lemino投票はこちら">
           <ol class="sub-steps" style="counter-reset:substep 1;">
             <li>dアカウントでログイン</li>
-            <li>柳谷伊冴（ISSA）を含む2名を投票ボックスへ追加</li>
+            <li>柳谷伊冴（ISSA）を投票ボックスへ追加</li>
           </ol>
           <img src="IMG_5158.jpeg" style="width:40%; max-width:180px; border-radius:8px; margin:8px auto 12px; display:block;" alt="投票ボックス追加">
-          <ol class="sub-steps" style="counter-reset:substep 2;">
+          <ol class="sub-steps" style="counter-reset:substep 3;">
             <li>右下の投票ボタンから投票</li>
           </ol>
           <img src="IMG_5160.jpeg" style="width:30%; max-width:120px; border-radius:8px; margin:8px auto 12px; display:block;" alt="投票ボタン">
-          <ol class="sub-steps" style="counter-reset:substep 3;">
+          <ol class="sub-steps" style="counter-reset:substep 4;">
             <li>完了後「国民投票サイト」ボタンから国民投票サイトにアクセスし追加で投票</li>
           </ol>
           <img src="IMG_5162.jpeg" style="width:100%; border-radius:8px; margin:8px 0 12px; display:block;" alt="国民投票完了">
-          <ol class="sub-steps" style="counter-reset:substep 4;">
+          <ol class="sub-steps" style="counter-reset:substep 5;">
             <li>国民投票を先に行った方は、完了後「Lemino」ボタンからLeminoにアクセスし追加で投票</li>
           </ol>
           <img src="IMG_5163.jpeg" style="width:100%; border-radius:8px; margin:8px 0 12px; display:block;" alt="Lemino遷移">
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- Flow B: dアカウントあり・Leminoなし -->
   <div id="flow-B" class="flow-section">
-
     <div class="step-card">
       <div class="step-header">
         <div class="step-num">①</div>
@@ -650,30 +627,28 @@
           <img src="IMG_5147.jpeg" style="width:100%; border-radius:8px; margin:8px 0 12px; display:block;" alt="Lemino投票はこちら">
           <ol class="sub-steps" style="counter-reset:substep 1;">
             <li>dアカウントでログイン</li>
-            <li>柳谷伊冴（ISSA）を含む2名を投票ボックスへ追加</li>
+            <li>柳谷伊冴（ISSA）を投票ボックスへ追加</li>
           </ol>
           <img src="IMG_5158.jpeg" style="width:40%; max-width:180px; border-radius:8px; margin:8px auto 12px; display:block;" alt="投票ボックス追加">
-          <ol class="sub-steps" style="counter-reset:substep 2;">
+          <ol class="sub-steps" style="counter-reset:substep 3;">
             <li>右下の投票ボタンから投票</li>
           </ol>
           <img src="IMG_5160.jpeg" style="width:30%; max-width:120px; border-radius:8px; margin:8px auto 12px; display:block;" alt="投票ボタン">
-          <ol class="sub-steps" style="counter-reset:substep 3;">
-            <li> 完了後「国民投票サイト」ボタンから国民投票サイトにアクセスし追加で投票 </li>
+          <ol class="sub-steps" style="counter-reset:substep 4;">
+            <li>完了後「国民投票サイト」ボタンから国民投票サイトにアクセスし追加で投票</li>
           </ol>
           <img src="IMG_5162.jpeg" style="width:100%; border-radius:8px; margin:8px 0 12px; display:block;" alt="国民投票完了">
-          <ol class="sub-steps" style="counter-reset:substep 4;">
+          <ol class="sub-steps" style="counter-reset:substep 5;">
             <li>国民投票を先に行った方は、完了後「Lemino」ボタンからLeminoにアクセスし追加で投票</li>
           </ol>
           <img src="IMG_5163.jpeg" style="width:100%; border-radius:8px; margin:8px 0 12px; display:block;" alt="Lemino遷移">
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- Flow C: 両方あり -->
   <div id="flow-C" class="flow-section">
-
     <div class="step-card">
       <div class="step-header">
         <div class="step-num">①</div>
@@ -694,30 +669,28 @@
           <img src="IMG_5147.jpeg" style="width:100%; border-radius:8px; margin:8px 0 12px; display:block;" alt="Lemino投票はこちら">
           <ol class="sub-steps" style="counter-reset:substep 1;">
             <li>dアカウントでログイン</li>
-            <li>柳谷伊冴（ISSA）を含む2名を投票ボックスへ追加</li>
+            <li>柳谷伊冴（ISSA）を投票ボックスへ追加</li>
           </ol>
           <img src="IMG_5158.jpeg" style="width:40%; max-width:180px; border-radius:8px; margin:8px auto 12px; display:block;" alt="投票ボックス追加">
-          <ol class="sub-steps" style="counter-reset:substep 2;">
+          <ol class="sub-steps" style="counter-reset:substep 3;">
             <li>右下の投票ボタンから投票</li>
           </ol>
           <img src="IMG_5160.jpeg" style="width:30%; max-width:120px; border-radius:8px; margin:8px auto 12px; display:block;" alt="投票ボタン">
-          <ol class="sub-steps" style="counter-reset:substep 3;">
-            <li> 完了後「国民投票サイト」ボタンから国民投票サイトにアクセスし追加で投票 </li>
+          <ol class="sub-steps" style="counter-reset:substep 4;">
+            <li>完了後「国民投票サイト」ボタンから国民投票サイトにアクセスし追加で投票</li>
           </ol>
           <img src="IMG_5162.jpeg" style="width:100%; border-radius:8px; margin:8px 0 12px; display:block;" alt="国民投票完了">
-          <ol class="sub-steps" style="counter-reset:substep 4;">
+          <ol class="sub-steps" style="counter-reset:substep 5;">
             <li>国民投票を先に行った方は、完了後「Lemino」ボタンからLeminoにアクセスし追加で投票</li>
           </ol>
           <img src="IMG_5163.jpeg" style="width:100%; border-radius:8px; margin:8px 0 12px; display:block;" alt="Lemino遷移">
         </div>
       </div>
     </div>
-
   </div>
 
 </div>
 
-<!-- Thank you -->
 <div class="thankyou">
   <p class="thankyou-title">お読みいただきありがとうございました！</p>
   <p class="thankyou-sub">ぜひISSAくんに投票していただけると嬉しいです！🩵</p>
@@ -743,31 +716,20 @@
   function answerQ1(answer) {
     q1Answer = answer;
     q2Answer = null;
-
-    setSelected(
-      document.getElementById('q1-yes'),
-      document.getElementById('q1-no'),
-      answer
-    );
-
+    setSelected(document.getElementById('q1-yes'), document.getElementById('q1-no'), answer);
     const q2 = document.getElementById('q2');
-
     if (answer === 'no') {
-      // dアカウントなし → Q2非表示・Flow A
       q2.classList.add('hidden');
-      // Q2ボタンのselectedもリセット
       document.getElementById('q2-yes').classList.remove('selected');
       document.getElementById('q2-no').classList.remove('selected');
       showFlow('A');
     } else {
-      // dアカウントあり → Q2表示・フローはQ2待ち
       if (q2.classList.contains('hidden')) {
         q2.classList.remove('hidden');
         q2.classList.add('appearing');
         setTimeout(() => q2.classList.remove('appearing'), 400);
         setTimeout(() => q2.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
       }
-      // Q2未回答ならプレビューに戻す
       if (!q2Answer) {
         document.querySelectorAll('.flow-section').forEach(el => el.classList.remove('active'));
         document.getElementById('default-preview').classList.remove('hidden');
@@ -777,18 +739,8 @@
 
   function answerQ2(answer) {
     q2Answer = answer;
-
-    setSelected(
-      document.getElementById('q2-yes'),
-      document.getElementById('q2-no'),
-      answer
-    );
-
-    if (answer === 'no') {
-      showFlow('B');
-    } else {
-      showFlow('C');
-    }
+    setSelected(document.getElementById('q2-yes'), document.getElementById('q2-no'), answer);
+    if (answer === 'no') { showFlow('B'); } else { showFlow('C'); }
   }
 </script>
 
